@@ -1,0 +1,17 @@
+<h3>To check mobile no has 10 digits or not</h3>
+<h3 id="demo10" style="color: red;"></h3>
+<button onclick="mobno()">click</button>
+
+<script>
+  var mob = 8237860537;
+  var str = mob.toString();
+  document.getElementById("demo10").innerHTML = mob;
+
+  function mobno() {
+    if (str.length == 10) {
+      document.getElementById("demo10").innerHTML = "valid";
+    } else {
+      document.getElementById("demo10").innerHTML = "invalid";
+    }
+  }
+</script>

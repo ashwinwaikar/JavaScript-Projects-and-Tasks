@@ -1,0 +1,21 @@
+<body>
+    <h3>To copy data from 1 textbox to another</h3>
+<form>
+<label>Enter data1:</label>
+<input type="text" id="demo5" style='color:red'>
+</input>
+<label>Enter data2:</label>
+<input type="text" id="demo6" style='color:red'>
+</input>
+<button type="button" onclick="copy()">copy</button>
+</form>
+
+</body>
+
+<script>
+function copy()
+{ 
+var x=document.getElementById("demo5");
+ demo6.value=demo5.value; 
+}
+</script>
