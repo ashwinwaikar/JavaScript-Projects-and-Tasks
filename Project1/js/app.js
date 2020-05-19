@@ -5,15 +5,24 @@ showNotes(); //to display all the notes as soon as website loads
 let addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", function (e) {
   let addTxt = document.getElementById("addTxt");
+  let addTitle = document.getElementById("addTitle");
   let notes = localStorage.getItem("notes"); //getting value of key notes into notes variable
   if (notes == null) {
     notesObj = []; //if string is empty we are storing it into object
   } else {
     notesObj = JSON.parse(notes); //coverting string into array and storing it into object
   }
-  notesObj.push(addTxt.value); //pushing new note at the last of the notesObj array
+  //making object literal myObj
+  let myObj = {
+    title: addTitle.value,
+    text: addTxt.value,
+  };
+  // notesObj.push(myObj); //pushing new note at the last of the notesObj array
+  notesObj.push(myObj); //pushing new note at the last of the notesObj array of OBJECTS
+
   localStorage.setItem("notes", JSON.stringify(notesObj)); //converting notesObj from array to string and storing to local storage key->notes //we always store string in the local storage
   addTxt.value = ""; //making addTxt element value empty so that we can add new node without pressing backspace in the textbox!
+  addTitle.value = ""; //makin addTitle value empty what ever we write in title as soon as we click add note
   //console.log(notesObj);
   showNotes();
 });
@@ -28,11 +37,12 @@ function showNotes() {
   }
   let html = ""; //just a name of variable
   notesObj.forEach(function (element, index) {
-    html += `
-            <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
+    html += `<div class="noteCard my-2 mx-2 card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Note ${index + 1}</h5>
-                        <p class="card-text"> ${element}</p>
+                        <h5 class="card-title"><b>${element.title}|Note-${
+      index + 1
+    }</b></h5>
+                        <p class="card-text">${element.text}</p>
                         <button id="${index}"onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button>
                     </div>
                 </div>`;
@@ -78,11 +88,3 @@ searchTxt.addEventListener("input", function () {
     // console.log(cardTxt);
   });
 });
-
-/*
-Future added features:
-1. Add Title
-2. Mark a note as Important
-3. Separate notes by user
-4. Sync and host to web server 
-*/
