@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+</html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +15,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Magic Notes</a>
+        <a class="navbar-brand" href="#">ASW Notes</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,7 +26,6 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
-
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" id="searchTxt" type="search" placeholder="Search"
@@ -36,10 +37,15 @@
 
 
     <div class="container my-3">
-        <h1>Welcome To ASW Notes</h1>
+        <h1 align="center"><b>Welcome To ASW Notes</b></h1>
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Add a note</h5>
+                <div class="form-group">
+                    <h4 class="card-title"><b>Add Title</b></h4>
+                    <input type=" text" class="form-control" id="addTitle" aria-describedby="title"
+                        placeholder="Enter Title">
+                </div>
+                <h4 class="card-title"><b>Add Note</b></h4>
                 <div class="form-group">
                     <textarea class="form-control" id="addTxt" rows="3"></textarea>
                 </div>
@@ -47,11 +53,10 @@
             </div>
         </div>
         <hr>
-        <h1>Your Notes</h1>
+        <h1><b>Your Notes</b></h1>
         <hr>
         <div id="notes" class="row container-fluid"> </div>
     </div>
-
 
 
 
