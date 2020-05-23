@@ -1,2 +1,2 @@
-# javascript
-javascript programs will be uploaded here
+# Javascript
+javascript Projects and tasks.
