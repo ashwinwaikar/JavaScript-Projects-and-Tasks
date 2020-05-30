@@ -5,11 +5,11 @@
 // console.log("this is task1 of Day 8");
 
 class Employee {
-  constructor(_memberId, _name, _salary, _netSalary) {
+  constructor(_memberId, _name, _salary) {
     this.memberId = _memberId;
     this.name = _name;
     this.salary = _salary;
-    this.netSalary = _netSalary;
+    this.netSalary;
   }
 
   set Id(x) {
@@ -21,9 +21,7 @@ class Employee {
   set Salary(x) {
     this.salary = x;
   }
-  set Net_Salary(x) {
-    this.netSalary = x;
-  }
+
 
   get Id() {
     return this.memberId;
@@ -34,18 +32,16 @@ class Employee {
   get Salary() {
     return this.salary;
   }
-  get Net_Salary() {
-    return this.netSalary;
-  }
+
 
   CalculateNetSal() {
-    return (this.netSalary = this.netSalary - this.netSalary * 0.1);
+    return (this.netSalary = this.salary-(this.salary * 0.1));
   }
 }
-let obj1 = new Employee(1009, "Ashwin Waikar", 55000, 100000);
+let obj1 = new Employee(1009, "Ashwin Waikar", 55000);
 // console.log(obj1);
 
-let obj2 = new Employee(2419, "Himanshu Raulkar", 40000, 70000);
+let obj2 = new Employee(2419, "Himanshu Raulkar", 40000);
 // console.log(obj2);
 
 let first = document.getElementById("first");
@@ -55,5 +51,16 @@ let second = document.getElementById("second");
 second.innerHTML = obj2.CalculateNetSal();
 
 //we can call and change any setter method eg-
-obj1.Net_Salary = 30;
+// obj1.salary= 70000;
+// console.log(obj1);
+// first.innerHTML = obj1.CalculateNetSal();
+
+// if we want to add any property for only any one object then
+// obj1.expense=5000;
+// console.log(obj1);
+
+//or if we want to add any property for all the objects and we can use it (it will present in the prototype)
+Employee.prototype.housingloan="10000";
 console.log(obj1);
+console.log(obj2);
+//similary we can use this for adding methods for all the objects at a time and we can use it (it will present in the prototype)
