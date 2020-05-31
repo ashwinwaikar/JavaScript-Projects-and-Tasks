@@ -1,0 +1,27 @@
+<!-- • Create three check boxes showing book name and price. 
+Create a text box. As per selection of check box , text box should show total of selected price. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 12</title>
+</head>
+
+<body>
+    <div class="container" align="center">
+        <label for="checkbox1">JAVASCRIPT Price-700 </label>
+        <input type="checkbox" name="book" id="checkbox1" value="700" onchange="Total()"><br><br>
+        <label for="checkbox1">CORE JAVA Price-1000 </label>
+        <input type="checkbox" name="book" id="checkbox2" value="1000" onchange="Total()"><br><br>
+        <label for="checkbox1">C++ Price-300 </label>
+        <input type="checkbox" name="book" id="checkbox3" value="300" onchange="Total()"><br><br>
+        <label for="textbox">Your Total is </label>
+        <input type="text" name="textbox" id="textbox">
+    </div>
+
+</body>
+<script src="task12.js"></script>
+
+</html>
