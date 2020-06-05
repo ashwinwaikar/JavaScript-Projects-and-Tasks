@@ -1,0 +1,33 @@
+body{
+    background-color:darkred;
+}
+
+    .imgBox{
+        background-image:url("vita.jpg");
+        position: relative;
+        height: 300px;
+        width: 500px;
+        cursor: pointer;
+    }
+
+    .whiteBox{
+        height: 300px;
+        width: 500px;
+        margin: 10px;
+        display: inline-block;
+        background-color: white;
+        border:5px blue solid;
+    }
+
+    .hold{
+        border: solid green 6px;
+    }
+
+    .hide{
+        display: none;
+    }
+
+    .dashed{
+        background: violet;
+        border-style: dashed;
+    }
